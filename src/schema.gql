@@ -1,0 +1,63 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Product {
+  """Product Id"""
+  id: ID!
+
+  """Product Name"""
+  name: String!
+
+  """Product Price"""
+  price: Float!
+}
+
+type User {
+  """User Id"""
+  id: ID!
+
+  """User Name"""
+  name: String!
+
+  """User Email"""
+  email: String!
+
+  """User Age"""
+  age: Int!
+
+  """User Orders"""
+  order: [Product!]
+}
+
+type Query {
+  findAllProduct: [Product!]!
+  findProduct(id: Int!): Product!
+  findAllUser: [User!]!
+  findUser(id: Int!): User!
+}
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+  createUser(createUserInput: CreateUserInput!): User!
+}
+
+input CreateProductInput {
+  """Product Name"""
+  name: String!
+
+  """Product Price"""
+  price: Float!
+}
+
+input CreateUserInput {
+  """User Name"""
+  name: String!
+
+  """User Email"""
+  email: String!
+
+  """User Age"""
+  age: Int!
+  orderId: String
+}
