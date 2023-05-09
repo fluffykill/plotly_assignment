@@ -21,10 +21,14 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Local testing
+To test locally open up a web browser and go to http://localhost:3000/graphql.
+This will open the graphql playground. Example queries/mutations are provided below to help testing.
+
 ## Example Mutations
 To Create A User
 ```
-mutation{
+mutation {
   createUser(
     createUserInput: {
       name: "Test1",
@@ -38,24 +42,24 @@ mutation{
 
 To Create A Product
 ```
-mutation{
-  createProduct(createProductInput:{
+mutation {
+  createProduct(createProductInput: {
     name: "product1",
     price: 1.5,
   })
 }
 ```
 
-## Queries
+## Example Queries
 Find A Single User From User ID
 ```
 {
   findUser(id: 1) {
-    id
-    name
-    email
+    id,
+    name,
+    email,
     order {
-      name
+      name,
       price
     }
   }
@@ -65,12 +69,12 @@ Find A Single User From User ID
 Find All Users
 ```
 {
-  findAllUser{
-    id
+  findAllUser {
+    id,
     name,
     age,
     email,
-    order{
+    order {
       name,
       price
     }
@@ -81,7 +85,7 @@ Find All Users
 Find Single Product From Product ID
 ```
 {
-  findProduct(id: 1){
+  findProduct(id: 1) {
     id,
     name,
     price
@@ -92,7 +96,7 @@ Find Single Product From Product ID
 Find All Products
 ```
 {
-  findAllProduct{
+  findAllProduct {
     id,
     name,
     price
