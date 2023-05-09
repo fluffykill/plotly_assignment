@@ -20,7 +20,7 @@ export class UserService {
         user.order = user.order.filter((order) => order !== null);
       }
       return user;
-    });;
+    });
   }
 
   async findAll():Promise<User[]> {
