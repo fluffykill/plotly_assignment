@@ -26,7 +26,7 @@ describe('ProductService', () => {
       ...product
     })),
     find: jest.fn().mockImplementation(() => Promise.resolve(mockProducts)),
-    findOneByOrFail: jest.fn().mockImplementation((obj) => Promise.resolve(mockProducts.find(product => product.id === obj.id)))
+    findOneBy: jest.fn().mockImplementation((obj) => Promise.resolve(mockProducts.find(product => product.id === obj.id)))
   };
 
   beforeEach(async () => {
